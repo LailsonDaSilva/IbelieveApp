@@ -1,14 +1,13 @@
 import React from "react";
 import { View, Text, StatusBar, ImageBackground, Image, TextInput, Button, Alert, TouchableOpacity } from "react-native";
 import { styles } from './styles';
-import { useNavigation} from "@react-navigation/core/src";
+import { useNavigation} from "@react-navigation/core";
 import background from '../../assets/background.png';
 import logoSmall from '../../assets/logo_small.png';
 import { Btn } from "../../components/button";
 
 
-export function Signin() {
-
+export function Signup() {
 
     return (
         <View style={styles.container}>
