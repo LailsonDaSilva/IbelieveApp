@@ -9,6 +9,12 @@ import { Btn } from "../../components/button";
 
 export function Signin() {
 
+    const navigation = useNavigation();
+
+    function handleSingnin(){
+            navigation.navigate('Signup');
+    }
+
 
     return (
         <View style={styles.container}>
@@ -41,7 +47,7 @@ export function Signin() {
                     <Text style={styles.noCont}>
                         Não tem conta?
                     </Text>
-                    <TouchableOpacity >
+                    <TouchableOpacity onPress={handleSingnin}>
                         <View style={styles.btnSecondy}>
                             <Text style={styles.btnTilte} >
                                 Cadastra-se

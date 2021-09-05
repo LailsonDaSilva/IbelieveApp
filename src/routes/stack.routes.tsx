@@ -1,32 +1,21 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { theme } from "../global/styles/theme";
 import { Signin } from "../screens/Signin";
 import { Signup } from "../screens/Signup";
 
-const stackRoutes = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const AppRoutes: React.FC = () => (
-    <stackRoutes.Navigator
-
-    screenOptions={{
-       
-        cardStyle: {
-                backgroundColor: theme.color.secundary
-        },
-    }}
+    <Stack.Navigator 
+    screenOptions={{ headerShown:false}}
+    
     >
-        <stackRoutes.Screen
-            name="Signin" 
-            component={Signin}
-        />
-         <stackRoutes.Screen
-            name="Signup" 
-            component={Signup}
-            
-        />
-
-    </stackRoutes.Navigator>
+        <Stack.Screen  name='Signin' component={Signin} />
+        <Stack.Screen  name='Signup' component={Signup} />
+      </Stack.Navigator>
 )
 export default AppRoutes;

@@ -7,27 +7,40 @@ export const styles = StyleSheet.create({
       
       },
       content:{
-          marginTop:80,
+        marginTop:80,
         backgroundColor: '#fff',
-        paddingVertical:40,
         paddingHorizontal: 30,
         margin:10,
         borderRadius: 15,
         height:"100%",
+        paddingBottom:40,
+
+      },
+      header:{   
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems:"center",
+        borderBottomWidth: 2,
+        paddingVertical:10,
+        marginTop: 4,
+        borderColor: theme.color.background,
+        marginBottom: 40,
       },
       image: {
-        flex: 1,
-        justifyContent: "center",
+        flex: 1,  
         width: '100%',
         height: '100%',
       },
       icon:{
-        marginBottom: 10,
+        width: 34,
+        height: 30,
       },
       welcome:{
           textTransform: "uppercase",
-          fontSize: 20,
-          fontWeight: "800",
+          fontSize: 24,
+          fontWeight: "bold",
+          padding: 4,
+          flex:1,
       },
       tilte:{
           fontSize:30,
@@ -38,6 +51,7 @@ export const styles = StyleSheet.create({
       label:{
             fontWeight: "bold",
             paddingBottom:5,
+            fontSize:16
       },
       input:{
           fontSize: 20,
@@ -47,7 +61,7 @@ export const styles = StyleSheet.create({
           borderRadius: 5,
           borderColor: theme.color.background,
           marginBottom:30,
-          paddingHorizontal: 20,
+          padding: 12,
       },
       noCont:{
           textAlign:"center",

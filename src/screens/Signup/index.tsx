@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StatusBar, ImageBackground, Image, TextInput, Button, Alert, TouchableOpacity } from "react-native";
+import { View, Text, StatusBar, ImageBackground, Image, TextInput, Button, Alert, TouchableOpacity, ScrollView } from "react-native";
 import { styles } from './styles';
 import { useNavigation} from "@react-navigation/core";
 import background from '../../assets/background.png';
@@ -10,6 +10,7 @@ import { Btn } from "../../components/button";
 export function Signup() {
 
     return (
+        <ScrollView>
         <View style={styles.container}>
             <ImageBackground source={background} resizeMode="cover" style={styles.image}>
                 <View style={styles.content}>
@@ -17,38 +18,64 @@ export function Signup() {
                         barStyle="dark-content"
                         backgroundColor="transparent"
                         translucent />
-
-
-                    <Image source={logoSmall} style={styles.icon} />
+                    <View style={styles.header}>
                     <Text style={styles.welcome}>
-                        Bem-Vindo
+                        Cadastro na rede
                     </Text>
-                    <Text style={styles.tilte}>
-                        Ao clube de vantagens
-                        da I Believe
-                    </Text>
+                    <Image source={logoSmall} style={styles.icon} />
+                    </View>
+
+                    <View>
                     <Text style={styles.label}>
-                        Login
+                        Nome completo
                     </Text>
                     <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
+                    </View>
+
+                    <View>
+                    <Text style={styles.label}>
+                        E-mail
+                    </Text>
+                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
+                    </View>
+
+                    <View>
+                    <Text style={styles.label}>
+                        Telefone
+                    </Text>
+                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
+                    </View>
+
+                    <View>
+                    <Text style={styles.label}>
+                        CPF
+                    </Text>
+                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
+                    </View>
+
+                    <View>
+                    <Text style={styles.label}>
+                    Data de nascimento
+                    </Text>
+                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
+                    </View>
+                    <View>
                     <Text style={styles.label}>
                         Senha
                     </Text>
-                    <TextInput style={styles.input} placeholder="****" />
-                    {/* <Button onPress={() => Alert.alert('Cannot press this one')} style={styles.btn} title="submit"/> */}
-                    <Btn title="Acessar minha conta"/>
-                    <Text style={styles.noCont}>
-                        Não tem conta?
+                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
+                    </View>
+                    <View>
+                    <Text style={styles.label}>
+                        Quem te recomendou?
                     </Text>
-                    <TouchableOpacity >
-                        <View style={styles.btnSecondy}>
-                            <Text style={styles.btnTilte} >
-                                Cadastra-se
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
+                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
+                    </View>
+                   
+                     <Btn title="Avançar"/>
                 </View>
             </ImageBackground>
         </View>
+        </ScrollView>
     );
 }
