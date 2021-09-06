@@ -4,9 +4,14 @@ import { styles } from './styles';
 import { useNavigation} from "@react-navigation/core";
 import background from '../../assets/background.png';
 import logoSmall from '../../assets/logo_small.png';
+import  IconPhone  from '../../assets/phone.svg';
+import  IconDate  from '../../assets/date.svg';
+import  IconShow  from '../../assets/show_password.svg';
 import { Btn } from "../../components/button";
-
-
+import Svg, { Path } from "react-native-svg"
+import { Input } from "../../components/textInput";
+import Maskfy from 'react-maskfy';
+import { TextInputMask } from 'react-native-masked-text';
 export function Signup() {
 
     return (
@@ -24,55 +29,14 @@ export function Signup() {
                     </Text>
                     <Image source={logoSmall} style={styles.icon} />
                     </View>
-
-                    <View>
-                    <Text style={styles.label}>
-                        Nome completo
-                    </Text>
-                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
-                    </View>
-
-                    <View>
-                    <Text style={styles.label}>
-                        E-mail
-                    </Text>
-                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
-                    </View>
-
-                    <View>
-                    <Text style={styles.label}>
-                        Telefone
-                    </Text>
-                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
-                    </View>
-
-                    <View>
-                    <Text style={styles.label}>
-                        CPF
-                    </Text>
-                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
-                    </View>
-
-                    <View>
-                    <Text style={styles.label}>
-                    Data de nascimento
-                    </Text>
-                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
-                    </View>
-                    <View>
-                    <Text style={styles.label}>
-                        Senha
-                    </Text>
-                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
-                    </View>
-                    <View>
-                    <Text style={styles.label}>
-                        Quem te recomendou?
-                    </Text>
-                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
-                    </View>
-                   
-                     <Btn title="Avançar"/>
+                    <Input Name="Nome completo" placeholder="Qual é o seu nome?"  />
+                    <Input Name="E-mail" placeholder="Qual é o seu e-mail?"  />      
+                    <Input Name="Telefone" placeholder="" SvgProps={IconPhone} />       
+                    <Input Name="CPF" placeholder=""  />
+                    <Input Name="Data de nascimento" placeholder="" SvgProps={IconDate} />
+                    <Input Name="Senha" placeholder="" SvgProps={IconShow} />
+                    <Input Name="Quem te recomendou" placeholder="Digite o e-mail de quem te recomendou."  />
+                    <Btn title="Avançar"/>
                 </View>
             </ImageBackground>
         </View>

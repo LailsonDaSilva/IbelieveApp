@@ -5,7 +5,9 @@ import { useNavigation} from "@react-navigation/core/src";
 import background from '../../assets/background.png';
 import logoSmall from '../../assets/logo_small.png';
 import { Btn } from "../../components/button";
-
+import {Formik} from "formik";
+import { Input } from "../../components/textInput";
+import  IconShow  from '../../assets/show_password.svg';
 
 export function Signin() {
 
@@ -34,15 +36,9 @@ export function Signin() {
                         Ao clube de vantagens
                         da I Believe
                     </Text>
-                    <Text style={styles.label}>
-                        Login
-                    </Text>
-                    <TextInput style={styles.input} placeholder="Digite o seu e-mail" />
-                    <Text style={styles.label}>
-                        Senha
-                    </Text>
-                    <TextInput style={styles.input} placeholder="****" />
-                    {/* <Button onPress={() => Alert.alert('Cannot press this one')} style={styles.btn} title="submit"/> */}
+                    <Input Name="Login" placeholder="Digite seu e-mail"/>
+                    <Input Name="Senha" placeholder="*****" SvgProps={IconShow} />
+    
                     <Btn title="Acessar minha conta"/>
                     <Text style={styles.noCont}>
                         Não tem conta?
