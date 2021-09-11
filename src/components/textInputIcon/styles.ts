@@ -46,8 +46,5 @@ export const styles = StyleSheet.create({
 
         padding: 12,
   },
-  marginLabel:{
-    marginBottom:30,
-  },
 
 })

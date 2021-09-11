@@ -35,10 +35,6 @@ export const styles = StyleSheet.create({
           paddingBottom:50,
         
       },
-      label:{
-            fontWeight: "bold",
-            paddingBottom:5,
-      },
       input:{
           fontSize: 20,
           width: "100%",
@@ -69,7 +65,57 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "bold",
        
-    }
+    },
+    textError:{
+      color: theme.color.secundary,
+    },
+    marginLabel:{
+      marginBottom:20,
+    },
+    sectionStyle: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 48,
+      borderWidth: 2,
+      borderRadius: 5,
+      borderColor: theme.color.background,
+
+      padding: 12,
+    },
+    label:{
+      fontWeight: "bold",
+      paddingBottom:5,
+      fontSize:16
+},
+iconStyle:{
+  width:30, 
+  height:30
+},
+sectionError:{
+  flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 48,
+      borderWidth: 2,
+      borderRadius: 5,
+      borderColor: theme.color.secundary,
+
+      padding: 12,
+},
+sectionTouched:{
+  flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 48,
+      borderWidth: 2,
+      borderRadius: 5,
+      borderColor: theme.color.primary,
+
+      padding: 12,
+},
+
+  
      /*  text:{
         color: "white",
         fontSize: 42,

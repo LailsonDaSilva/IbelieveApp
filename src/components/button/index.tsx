@@ -1,21 +1,50 @@
 import React from "react";
-import {View,TouchableOpacity, Text } from "react-native";
+import {View,TouchableOpacity, Text, ButtonProps, TouchableOpacityProps, Button} from "react-native";
 import { styles } from "./styles";
 
-interface BntProps {
-    title: string;
+type BntProps =  ButtonProps &  {
+    title?: string; 
 }
 
 
-export function Btn({title }: BntProps ){
+export function Btn({title, ...rest}: BntProps ){
     return(
-        <TouchableOpacity>
+       
+        <TouchableOpacity {...rest}>
             <View style={styles.btn}>
                 <Text style={styles.btnTilte} >
-                    {title}
+                    {title} 
                 </Text>
             </View>
         </TouchableOpacity>
 
     );
 };
+/* export function Btn({title, ...rest}: BntProps ){
+    return(
+       
+        <TouchableOpacity {...rest}>
+            <View style={styles.btn}>
+                <Text style={styles.btnTilte} >
+                    {title} <Button/>
+                </Text>
+            </View>
+        </TouchableOpacity>
+
+    );
+}; */
+
+
+/* export function Btn({...rest}: BntProps ){
+    return(
+       
+     
+            <View >
+             
+             <Button  {...rest} />
+    
+            </View>
+     
+
+    );
+}; */

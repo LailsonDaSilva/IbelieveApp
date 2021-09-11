@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text, TextInput, TextInputProps } from "react-native";
-import { styles } from "./styles";
 import IconDate from '../../assets/phone.svg';
 import { placeholder } from "sequelize/types/lib/operators";
 import { SvgProps } from "react-native-svg";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { TextInputMask } from 'react-native-masked-text';
+import { styles } from "./styles";
+import { TextInputMask } from "react-native-masked-text";
 
 type InputProps = TextInputProps & {
-    Name?: string;
-    SvgProps?: React.FC<SvgProps>;
+    Name: string;
     error?: string;
     touched?: boolean;
 }
-export function Input({ Name, SvgProps: SvgProps, error, touched, ...rest }: InputProps) {
+
+
+export function InputPhone({ Name, error, touched, ...rest }: InputProps) {
     const [onFocus, setOnFocus] = useState(true);
     function handleOnFocus() {
         setOnFocus(false);
@@ -22,16 +23,18 @@ export function Input({ Name, SvgProps: SvgProps, error, touched, ...rest }: Inp
         setOnFocus(true);
     }
     return (
-        <View style={styles.marginLabel}>
+        <View >
             <Text style={styles.label}>
                 {Name}
             </Text>
             <View style={onFocus ? styles.sectionStyle : error ? styles.sectionError : styles.sectionTouched}>
-                <TextInput onBlur={handleblur} onFocus={handleOnFocus}  {...rest}
+                <TextInputMask type={'cel-phone'} options={{ maskType: 'BRL', withDDD: true, dddMask: '(99)' }} onBlur={handleblur} onFocus={handleOnFocus}
                     style={{ flex: 1, fontSize: 18 }}
-                    underlineColorAndroid="transparent"                
-                />
+                    underlineColorAndroid="transparent"  {...rest}
+                     />
+
             </View>
         </View>
     );
 };
+/*  */

@@ -1,1 +1,2 @@
-declare module 'react-maskfy';
+declare module 'maskfy';
+declare module 'axios';

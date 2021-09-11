@@ -4,16 +4,18 @@ import { styles } from "./styles";
 import IconDate from '../../assets/phone.svg';
 import { placeholder } from "sequelize/types/lib/operators";
 import { SvgProps } from "react-native-svg";
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { TextInputMask } from 'react-native-masked-text';
+import IconShow from '../../assets/show_password.svg';
+import IconHide from '../../assets/hide_password.svg';
 
 type InputProps = TextInputProps & {
-    Name?: string;
+    Name: string;
     SvgProps?: React.FC<SvgProps>;
     error?: string;
     touched?: boolean;
 }
-export function Input({ Name, SvgProps: SvgProps, error, touched, ...rest }: InputProps) {
+
+
+export function InputPassword({ Name, SvgProps: SvgProps, error, touched, ...rest }: InputProps) {
     const [onFocus, setOnFocus] = useState(true);
     function handleOnFocus() {
         setOnFocus(false);
@@ -21,16 +23,25 @@ export function Input({ Name, SvgProps: SvgProps, error, touched, ...rest }: Inp
     function handleblur() {
         setOnFocus(true);
     }
+    const [show, setShow] = useState(true);
     return (
         <View style={styles.marginLabel}>
             <Text style={styles.label}>
                 {Name}
             </Text>
             <View style={onFocus ? styles.sectionStyle : error ? styles.sectionError : styles.sectionTouched}>
-                <TextInput onBlur={handleblur} onFocus={handleOnFocus}  {...rest}
+                <TextInput onBlur={handleblur} onFocus={handleOnFocus}
                     style={{ flex: 1, fontSize: 18 }}
-                    underlineColorAndroid="transparent"                
+                    underlineColorAndroid="transparent"
+                    secureTextEntry={show}
+                    placeholder="****"
+                    {...rest}
+
                 />
+                <TouchableOpacity onPress={() => setShow(!show)}>
+                    {show ? <IconShow width="22" height="22" /> : <IconHide width="22" height="22" />}
+
+                </TouchableOpacity>
             </View>
         </View>
     );

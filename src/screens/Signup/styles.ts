@@ -102,7 +102,35 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "bold",
        
-    }
+    },
+    marginLabel:{
+      marginBottom:20,
+    },
+    sectionError:{
+      flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: 48,
+          borderWidth: 2,
+          borderRadius: 5,
+          borderColor: theme.color.secundary,
+    
+          padding: 12,
+    },
+    sectionTouched:{
+      flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: 48,
+          borderWidth: 2,
+          borderRadius: 5,
+          borderColor: theme.color.primary,
+    
+          padding: 12,
+    },
+    textError:{
+      color: theme.color.secundary,
+    },
      /*  text:{
         color: "white",
         fontSize: 42,
