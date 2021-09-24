@@ -3,20 +3,22 @@ import {
   View,
   TouchableOpacity,
   Text,
-  TextInput,
   TextInputProps,
 } from "react-native";
 import { styles } from "./styles";
+import IconDate from "../../assets/date.svg";
 import { SvgProps } from "react-native-svg";
 
+import { TextInputMask } from "react-native-masked-text";
 
 type InputProps = TextInputProps & {
-  Name?: string;
+  Name: string;
   SvgProps?: React.FC<SvgProps>;
   error?: string;
   touched?: boolean;
 };
-export function Input({
+
+export function InputDate({
   Name,
   SvgProps: SvgProps,
   error,
@@ -24,12 +26,18 @@ export function Input({
   ...rest
 }: InputProps) {
   const [onFocus, setOnFocus] = useState(true);
+  const [date, setDate] = useState(new Date());
   function handleOnFocus() {
     setOnFocus(false);
   }
   function handleblur() {
     setOnFocus(true);
   }
+  const onChange = (event: any, selectedDate: any) => {
+    setDate(selectedDate);
+    console.log(selectedDate);
+  };
+
   return (
     <>
       <Text style={styles.label}>{Name}</Text>
@@ -42,15 +50,20 @@ export function Input({
             : styles.sectionTouched
         }
       >
-        <TextInput
+        <TextInputMask
+          type={"datetime"}
+          options={{ format: "DD-MM-YYYY" }}
           onBlur={handleblur}
           onFocus={handleOnFocus}
-          {...rest}
           style={{ flex: 1, fontSize: 18 }}
           underlineColorAndroid="transparent"
+          {...rest}
         />
+
+        <TouchableOpacity>
+          {<IconDate width="22" height="22" />}
+        </TouchableOpacity>
       </View>
-      <TouchableOpacity>{SvgProps}</TouchableOpacity>
     </>
   );
 }

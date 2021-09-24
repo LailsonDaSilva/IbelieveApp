@@ -7,10 +7,11 @@ export const styles = StyleSheet.create({
     backgroundColor:'#fff',
     borderRadius:5,
     padding:8,
-    marginTop:20
+    marginBottom:20
 },
 headerCard:{
     flexDirection:'row',
+    justifyContent:'space-between'
 },
 closeDown:{
     backgroundColor:theme.color.background,

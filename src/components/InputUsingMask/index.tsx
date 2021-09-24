@@ -1,28 +1,20 @@
+import { ErrorMessage } from "formik";
 import React, { useState } from "react";
 import {
   View,
-  TouchableOpacity,
   Text,
-  TextInput,
   TextInputProps,
 } from "react-native";
+import { TextInputMask, TextInputMaskProps } from "react-native-masked-text";
 import { styles } from "./styles";
-import { SvgProps } from "react-native-svg";
+type InputProps = TextInputProps &
+  TextInputMaskProps & {
+    Name: string;
+    error?: string;
+    touched?: boolean;
+  };
 
-
-type InputProps = TextInputProps & {
-  Name?: string;
-  SvgProps?: React.FC<SvgProps>;
-  error?: string;
-  touched?: boolean;
-};
-export function Input({
-  Name,
-  SvgProps: SvgProps,
-  error,
-  touched,
-  ...rest
-}: InputProps) {
+export function InputUsingMask({ Name, error, touched, ...rest }: InputProps) {
   const [onFocus, setOnFocus] = useState(true);
   function handleOnFocus() {
     setOnFocus(false);
@@ -42,15 +34,14 @@ export function Input({
             : styles.sectionTouched
         }
       >
-        <TextInput
+        <TextInputMask
           onBlur={handleblur}
           onFocus={handleOnFocus}
-          {...rest}
           style={{ flex: 1, fontSize: 18 }}
           underlineColorAndroid="transparent"
+          {...rest}
         />
       </View>
-      <TouchableOpacity>{SvgProps}</TouchableOpacity>
     </>
   );
 }
