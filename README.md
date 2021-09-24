@@ -20,8 +20,5 @@
 
 ### :alien: Autor
 ---
-Desenvolvido ❤️ por Lailson da Silva
+ Lailson da Silva
 
-Entre em contato
-
-[![Gmail Badge](https://img.shields.io/badge/-lailsonkazumi@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:lailsonkazumi@gmail.com)](mailto:lailsonkazumi@gmail.com)
