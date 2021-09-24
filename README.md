@@ -1,8 +1,4 @@
-<h1 align="center">
-  <br>
-  <img src="https://i.ibb.co/9sP4cnv/logo.png" alt="Chuá" height="125" width="125">
-  <br>
-</h1>
+
 
 ## 🗂 Como baixar o projeto
 
